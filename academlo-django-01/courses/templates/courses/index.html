@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🏫 Courses</title>
+
+    {# bootstrap CDN #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    {# custom styles #}
+    <style>
+        .card-size {
+            max-width: 240px;
+        }
+        .img-size {
+            max-height: 160px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-3">
+    <h1>
+        Courses <i>a.k.a</i> Lessons
+    </h1>
+        <div class="row justify-content-center">
+        {% for course in courses %}
+            <div class="card m-2 card-size text-center p-0">
+                <img alt="{{ course.name }}" class="card-img-top img-size img-fluid rounded-top card-size" src="{{ course.url_image }}"/>
+                <div class="card-body text-center">
+                     <p class="card-title" style="font-size: 1.3rem">
+                        {{ course.name }}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="./{{ course.id }}" class="btn btn-primary">Go to course</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

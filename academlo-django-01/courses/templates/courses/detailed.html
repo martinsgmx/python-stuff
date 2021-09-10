@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🧮 {{ course.name }}</title>
+
+    {# bootstrap CDN #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    {# custom styles #}
+    <style>
+        .card-size {
+            max-width: 800px;
+        }
+        img {
+            max-width: 350px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-3">
+    <input type="button" class="btn btn-danger" onclick="history.go(-1)" value="< Back" />
+    <div class="row justify-content-center mt-3 justify-content-center">
+        <div class="card card-size text-center">
+            <div class="align-content-center p-2">
+                <img alt="{{ course.name }}" src="{{ course.url_image }}"/>
+            </div>
+            <div class="card-body">
+                <p>
+                    <strong>{{ course.name }}</strong>
+                    <br />
+                    About this course: <i>{{ course.about }}</i>
+                    <br />
+                    Duration: <strong>{{ course.duration }} months.</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

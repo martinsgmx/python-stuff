@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>‍🎓 Student {{ student.name }}</title>
+
+    {# bootstrap CDN #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    {# custom styles #}
+    <style>
+        img {
+            max-width: 180px;
+        }
+        .card-size {
+            max-width: 550px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-3">
+    <input type="button" class="btn btn-danger" onclick="history.go(-1)" value="< Back" />
+    <div class="row justify-content mt-2 justify-content-center">
+        <div class="card card-size text-center">
+           <div class="align-content-center p-2">
+               <img alt="{{ student.name }}" src="{{ student.profile_pic }}">
+           </div>
+           <hr/>
+           <div class="card-body">
+               <p>
+                   Name: <strong>{{ student.name }}</strong>
+                   <br />
+                   Email: <strong>{{ student.email }}</strong>
+                   <br />
+                   Born date: <strong>{{ student.born_date }}</strong>
+                   <br />
+                   Nationality: <strong>{{ student.nationality }}</strong> <img alt="{{ student.nationality }}" src="https://www.countryflags.io/{{ student.nationality }}/flat/64.png" height="15px">
+               </p>
+           </div>
+        </div>
+    </div>
+<div>
+</body>
+</html>
