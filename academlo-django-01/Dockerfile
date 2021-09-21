@@ -6,8 +6,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . app
 WORKDIR /app
 
-RUN python manage.py migrate
 RUN python manage.py makemigrations
+RUN python manage.py migrate
 
 RUN python create_fake_data.py
 
